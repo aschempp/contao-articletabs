@@ -17,12 +17,15 @@
 </div>
 <script src="system/modules/articletabs/html/rotater.js"></script>
 <script src="system/modules/articletabs/html/tabs.js"></script>
-<script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
 window.addEvent('domready', function() {
-	new Tabs('#<?php echo $this->inColumn; ?> .tabs a', '#<?php echo $this->inColumn; ?> .mod_article');
+	new Tabs('#<?php echo $this->inColumn; ?> .tabs a', document.getElements('#<?php echo $this->inColumn; ?> .mod_article').setStyle('position', 'absolute'), {
+		onShowSlide: function(slideIndex) {
+			document.getElement('#<?php echo $this->inColumn; ?> .mod_articletabs').tween('height', document.getElements('#<?php echo $this->inColumn; ?> .mod_article')[slideIndex].getSize().y);
+		}
+	});
 });
+//--><!]]>
 </script>
-<style>
-.mod_articletabs .mod_article { position:absolute; overflow:hidden; }
-</style>
 <!-- indexer::continue -->
