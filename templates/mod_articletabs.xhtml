@@ -20,9 +20,14 @@
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
 window.addEvent('domready', function() {
-	new Tabs('#<?php echo $this->inColumn; ?> .tabs a', document.getElements('#<?php echo $this->inColumn; ?> .mod_article').setStyle('position', 'absolute'), {
+	var tabs = document.getElements('#<?php echo $this->inColumn; ?> .tabs a');
+	var slides = document.getElements('#<?php echo $this->inColumn; ?> .mod_article').setStyle('position', 'absolute');
+	new Tabs(tabs, slides, {
 		onShowSlide: function(slideIndex) {
-			document.getElement('#<?php echo $this->inColumn; ?> .mod_articletabs').tween('height', document.getElements('#<?php echo $this->inColumn; ?> .mod_article')[slideIndex].getSize().y);
+			slides.removeClass('active');
+			tabs.removeClass('active');
+			tabs[slideIndex].addClass('active');
+			document.getElement('#<?php echo $this->inColumn; ?> .mod_articletabs').tween('height', slides[slideIndex].addClass('active').getSize().y);
 		}
 	});
 });
