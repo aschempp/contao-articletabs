@@ -24,10 +24,15 @@ window.addEvent('domready', function() {
 	var slides = document.getElements('#<?php echo $this->inColumn; ?> .mod_article').setStyle('position', 'absolute');
 	new Tabs(tabs, slides, {
 		onShowSlide: function(slideIndex) {
-			slides.removeClass('active');
+			slides.setStyle('display', 'block').removeClass('active');
 			tabs.removeClass('active');
 			tabs[slideIndex].addClass('active');
-			document.getElement('#<?php echo $this->inColumn; ?> .mod_articletabs').tween('height', slides[slideIndex].addClass('active').getSize().y);
+			document.getElement('#<?php echo $this->inColumn; ?> .mod_articletabs').setStyle('display', 'block').tween('height', slides[slideIndex].addClass('active').getSize().y));
+			
+			slides.each( function(slide, index) {
+				if (index != slideIndex)
+					slide.setStyle('display', 'none');
+			});
 		}
 	});
 });
