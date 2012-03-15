@@ -32,6 +32,8 @@ window.addEvent('domready', function() {
 				if (index != slideIndex)
 					slide.setStyle('display', 'none');
 			});
+			
+            window.fireEvent('showslide');
 		}
 	});
 });
