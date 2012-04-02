@@ -19,7 +19,7 @@
 <script src="system/modules/articletabs/html/tabs.js"></script>
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
-window.addEvent('domready', function() {
+window.addEvent('load', function() {
 	var tabs = document.getElements('#<?php echo $this->inColumn; ?> .tabs a');
 	var slides = document.getElements('#<?php echo $this->inColumn; ?> .mod_article').setStyle('position', 'absolute');
 	new Tabs(tabs, slides, {
