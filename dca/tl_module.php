@@ -21,8 +21,8 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Andreas Schempp 2012
- * @author     Andreas Schempp <andreas@schempp.ch>
+ * @copyright  terminal42 gmbh 2013
+ * @author     terminal42 <info@terminal42.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
