@@ -63,6 +63,9 @@ class ModuleArticleTabs extends Module
 
     protected function compile()
     {
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/articletabs/assets/rotater.js';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/articletabs/assets/tabs.js';
+
         global $objPage;
 
         $time = time();
